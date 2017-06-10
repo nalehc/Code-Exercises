@@ -9,8 +9,9 @@ def drawPolygon(t, sideLength, numSides):
 def drawCircle(anyTurtle, radius, color): 
     anyTurtle.color(color) 
     anyTurtle.penup() 
-    anyTurtle.left(90) 
-    anyTurtle.forward(20) 
+    anyTurtle.left(180)
+    anyTurtle.forward(radius)
+    anyTurtle.right(90)
     anyTurtle.pendown() 
     anyTurtle.begin_fill()
     circumference = 2 * 3.1415 * radius 
@@ -24,6 +25,9 @@ def drawCircle(anyTurtle, radius, color):
 wn = turtle.Screen() 
 wheel = turtle.Turtle()
 
-drawCircle(wheel, 20, "blue")
+radius = int(input("How big?"))
+color = str(input("What color?"))
+
+drawCircle(wheel, radius, color)
 
 wn.exitonclick()
